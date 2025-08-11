@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('_pedido_producto', function (Blueprint $table) {
+        Schema::create('pedido_productos', function (Blueprint $table) {
             $table->id();
             $table->integer('cantidad');
             $table->decimal('total',8,2);

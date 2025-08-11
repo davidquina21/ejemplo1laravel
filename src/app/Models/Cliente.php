@@ -4,12 +4,12 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Clientes extends Model
+class Cliente extends Model
 {
  // Permitir asignación masiva
  protected $fillable = ['nombre', 'email', 'telefono'];
  // Relación: Una categoría tiene muchos productos
  public function pedidos() {
- return $this->hasMany(Pedidos::class);
+ return $this->hasMany(Pedido::class);
  }
 }

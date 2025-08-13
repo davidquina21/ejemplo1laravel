@@ -2,15 +2,13 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Producto;
 use Illuminate\Http\Request;
+use App\Models\Producto;
 
 class ProductoController extends Controller
 {
-    public function index()
-    {
-        $productos = Producto::with('categoria')->get();
+      public function index()     {
+        $productos = Producto::all();
         return view('productos.index', compact('productos'));
     }
-
 }

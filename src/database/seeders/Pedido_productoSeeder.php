@@ -6,9 +6,9 @@ use App\Models\Cliente;
 use App\Models\Pedido_producto;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
-Use App\Models\Productos2;
+Use App\Models\Producto;
 
-class PedidoProductoSeeder extends Seeder
+class Pedido_productoSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -17,8 +17,8 @@ class PedidoProductoSeeder extends Seeder
     {
         $cliente = Cliente::where('nombre', 'Rosibel')->first();
         $pedido = $cliente->pedidos()->first();
-        $producto = Productos2::where('nombre', 'Teclado')->first();
-        $producto2 = Productos2::where('nombre', 'Monitor')->first();
+        $producto = Producto::where('nombre', 'Teclado')->first();
+        $producto = Producto::where('nombre', 'Monitor')->first();
         Pedido_producto::create([
 
             'cantidad'=>3,
@@ -30,8 +30,8 @@ class PedidoProductoSeeder extends Seeder
         Pedido_producto::create([
 
             'cantidad'=>5,
-            'total'=> $producto2->precio*5,
-            'producto_id'=>$producto2->id,
+            'total'=> $producto->precio*5,
+            'producto_id'=>$producto->id,
              'pedido_id'=>$pedido->id,
         ]);
 
